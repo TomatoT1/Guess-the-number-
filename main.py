@@ -3,18 +3,17 @@ secret = random.randint(1,50)
 win = False
 loss = False
 play = True
-Tries = 5
+tries = 0
 while play == True:
   print()
   guess = int(input("what's ur number guess?(0-50): "))
   if guess < secret:
     print("too smol")
-    Tries -= 1
+    tries += 1
   if guess > secret:
     print("too big")
-    Tries -= 1
+    tries += 1
   if guess == secret:
     print("GG")
-    play = False
-if Tries == 0:
-  print("you lost, too many tries use lol...")
+    tries += 1
+    print(f"You have finished in {tries} Tries... Good work!")
